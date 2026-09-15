@@ -1,11 +1,16 @@
+# Virtual environment
 .venv/
 venv/
+
+# Dataset
 datasets/
+
+# Python cache
 __pycache__/
 *.pyc
+
+# Jupyter
 .ipynb_checkpoints/
-*.pth
-*.pt
-*.onnx
-outputs/
+
+# Environment variables
 .env
