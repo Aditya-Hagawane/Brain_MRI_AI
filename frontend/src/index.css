@@ -1,0 +1,201 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --primary: #635bdb;
+  --primary-hover: #5148c7;
+  --primary-light: #eeedff;
+
+  --background: #f5f7fc;
+  --surface: #ffffff;
+  --surface-secondary: #f8f9fd;
+
+  --text: #192238;
+  --muted: #788398;
+  --border: #e6eaf1;
+
+  --success: #16a477;
+  --warning: #e9a23b;
+  --danger: #e45d67;
+
+  --sidebar-width: 260px;
+  --topbar-height: 76px;
+
+  --radius: 14px;
+  --shadow: 0 4px 20px rgba(30, 41, 59, 0.04);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(99, 91, 219, 0.25);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #dcd9ff;
+  color: #302b80;
+}
+
+/* Application theme variables */
+
+.app-shell {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.app-shell.dark-theme {
+  --primary: #938bff;
+  --primary-hover: #aaa4ff;
+  --primary-light: #29264b;
+
+  --background: #101522;
+  --surface: #1a2232;
+  --surface-secondary: #202a3d;
+
+  --text: #edf1fa;
+  --muted: #a0abc0;
+  --border: #303b50;
+
+  --success: #43c99a;
+  --warning: #f2bd62;
+  --danger: #ff7d87;
+
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* Common reusable styling */
+
+.content-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.primary-icon {
+  color: var(--primary);
+}
+
+.text-action {
+  color: var(--primary);
+  border: none;
+  background: transparent;
+  font-weight: 600;
+}
+
+.text-action:hover {
+  color: var(--primary-hover);
+  transform: translateX(3px);
+}
+
+/* Smooth page entrance */
+
+.page-content {
+  animation: pageEnter 0.3s ease both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #aeb6c7;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 0px;
+    --topbar-height: 65px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
